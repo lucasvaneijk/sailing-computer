@@ -62,12 +62,14 @@ void loop()
   {
     long latitude_mdeg = nmea.getLatitude();
     long longitude_mdeg = nmea.getLongitude();
+    long speed = nmea.getSpeed();
 
     Serial.print("Latitude (deg): ");
     Serial.println(latitude_mdeg / 1000000., 6);
     Serial.print("Longitude (deg): ");
     Serial.println(longitude_mdeg / 1000000., 6);
-
+    Serial.print("speed knots: ");
+    Serial.println(speed * 1000);
     nmea.clear(); // Clear the MicroNMEA storage to make sure we are getting fresh data
   }
   else
